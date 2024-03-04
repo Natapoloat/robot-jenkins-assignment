@@ -23,7 +23,7 @@ Test Addition API
     ${response} Get on Session api_session /is_prime/17
     Should Be Equal As Numbers ${response.status_code}  ${200}
     ${result}  Set Variable  ${response.json()["result"]}
-    Should Be Equal As Numbers  ${result}  ${True}
+    Should Be True  ${result}
 
 *** Keywords ***
 Should Be Equal As Numbers
