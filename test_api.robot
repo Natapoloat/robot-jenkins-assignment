@@ -25,6 +25,18 @@ Test Addition API
     ${result}  Set Variable  ${response.json()["result"]}
     Should Be Equal As Numbers  ${result}  ${True}
 
+    #Test case for false_when_x_is_36 
+    ${response}  GET On Session  api_session  /is_prime/36
+    Should Be Equal As Numbers  ${response.status_code}  ${200}
+    ${result}  Set Variable  ${response.json()["result"]}
+    Should Be Equal As Numbers  ${result}  ${False}
+
+    #Test case for true_when_x_is_13219
+    ${response}  GET On Session  api_session  /is_prime/13219
+    Should Be Equal As Numbers  ${response.status_code}  ${200}
+    ${result}  Set Variable  ${response.json()["result"]}
+    Should Be Equal As Numbers  ${result}  ${True}
+
 *** Keywords ***
 Should Be Equal As Numbers
     [Arguments]  ${actual}  ${expected}
