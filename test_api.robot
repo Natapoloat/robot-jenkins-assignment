@@ -21,9 +21,9 @@ Test Addition API
 
     #Test case for true_when_x_is_17 
     ${response}  GET On Session  api_session  /is_prime/17
-    Should Be Equal As Numbers ${response.status_code}  ${200}
+    Should Be Equal As Numbers  ${response.status_code}  ${200}
     ${result}  Set Variable  ${response.json()["result"]}
-    Should Be True  ${result}
+    Should Be Equal As Numbers  ${result}  ${True}
 
 *** Keywords ***
 Should Be Equal As Numbers
