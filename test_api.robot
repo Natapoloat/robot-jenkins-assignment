@@ -5,7 +5,7 @@ Library  RequestsLibrary
 Test Addition API
     [Documentation]  Test the /is_prime/x endpoint of the API
     [Tags]  API
-    Create Session  api_session  http://localhost:8080  # Adjust the URL based on your API's address and port
+    Create Session  api_session  http://localhost:8089  # Adjust the URL based on your API's address and port
 
     # Test case for positive numbers
     ${response}  GET On Session  api_session  /plus/2/3
